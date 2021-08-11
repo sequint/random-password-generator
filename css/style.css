@@ -1,9 +1,6 @@
-.contCustStyle {
-  height: 1000px;
-  background-color: #0e0e0e;
-}
-
 .passGeneratorBox {
   height: 500px;
   background-color: white;
+  margin-top: 20px;
+  margin-bottom: auto;
 }
