@@ -63,36 +63,35 @@ document.getElementById('generateBtn').addEventListener('click', event => {
 
   // Ignore event listener from parent element.
   document.getElementById('modalDialog').addEventListener('click', event => event.stopPropagation())
-})
 
+  //**********Next Button**********//
+  document.getElementById('nextBtn').addEventListener('click', event => {
+    event.preventDefault()
 
-//*********************************Next Button*********************************//
+    // Function that gets a desired password length from user between 8 and 128 characters.
+    const passwordLength = () => {
 
-document.getElementById('nextBtn').addEventListener('click', event => {
-  event.preventDefault()
+      console.log('In length function.')
 
-  // Function that gets a desired password length from user between 8 and 128 characters.
-  const passwordLength = () => {
+    }
 
-    console.log('In length function.')
+    // Function that gets desired special characters to inlclude from user between.
+    const specialCharacters = () => {
 
-  }
+      console.log('In special character function.')
 
-  // Function that gets desired special characters to inlclude from user between.
-  const specialCharacters = () => {
+    }
 
-    console.log('In special character function.')
+    if (lengthClicked) {
+      passwordLength()
+    }
+    else if (specialCharClicked) {
+      specialCharacters()
+    }
+    else {
+      document.getElementById('mustSelectMessage').textContent = 'Please select at least one criteria'
+    }
 
-  }
-
-  if (lengthClicked) {
-    passwordLength()
-  }
-  else if (specialCharClicked) {
-    specialCharacters()
-  }
-  else {
-    document.getElementById('mustSelectMessage').textContent = 'Please select at least one criteria'
-  }
+  })
 
 })
