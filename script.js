@@ -11,9 +11,9 @@ document.getElementById('generateBtn').addEventListener('click', event => {
                 <button type="button" class="btn-close" id="closeModalCorner"></button>
               </div>
               <div class="modal-body">
-                <ul class="passCriteriaList">
-                  <li id="lengthCritBool">Length</li>
-                  <li id="charCritBool">Special Characters</li>
+                <ul class="criteriaList">
+                  <li> <input class="criteriaItem" id="lengthCritBool" type="checkbox">Length</li>
+                  <li> <input class="criteriaItem" id="charCritBool" type="checkbox">Special Characters</li>
                 </ul>
               </div>
               <div class="modal-footer">
