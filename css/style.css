@@ -1,5 +1,6 @@
 .genTitle {
-  border-bottom: grey solid 2px;
+  border-bottom: rgb(220, 220, 220) solid 2px;
+  padding-bottom: 20px;
 }
 
 .generatorCustStyle {
