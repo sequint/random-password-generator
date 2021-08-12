@@ -46,9 +46,13 @@
   position: fixed;
   height: 1000px;
   width: 100%;
-  background-color:rgba(230, 230, 230, 0.6);
+  background-color: rgba(230, 230, 230, 0.6);
 }
 
 .modalPosition {
   margin-top: 200px;
+}
+
+.criteriaList {
+  list-style-type: none;
 }
