@@ -2,6 +2,6 @@
 document.getElementById('generateBtn').addEventListener('click', event => {
   event.preventDefault()
   document.getElementById('generatorPrompts').innerHTML = `
-        <div class="testDiv"></div>
+        <div class="promptsModal"></div>
       `
 })

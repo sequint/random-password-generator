@@ -41,7 +41,7 @@
   border: rgb(167, 1, 1) solid 1px;
 }
 
-.testDiv {
+.promptsModal {
   z-index: 100;
   position: fixed;
   height: 1000px;
