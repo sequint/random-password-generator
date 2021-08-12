@@ -15,7 +15,7 @@ document.getElementById('generateBtn').addEventListener('click', event => {
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" id="closeModalBottom">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary">Next</button>
               </div>
             </div>
           </div>
