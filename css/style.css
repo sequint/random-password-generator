@@ -53,3 +53,8 @@
 .modalPosition {
   margin-top: 200px;
 }
+
+.criteriaItem {
+  display: inline;
+  margin-left: 5px;
+}
