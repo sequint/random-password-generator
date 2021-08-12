@@ -1,3 +1,7 @@
+.genTitle {
+  border-bottom: grey solid 2px;
+}
+
 .generatorCustStyle {
   margin: 50px auto 0px auto;
   width: 800px;
