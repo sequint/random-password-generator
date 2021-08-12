@@ -33,6 +33,10 @@ document.getElementById('generateBtn').addEventListener('click', event => {
           </div>
         </div>
       `
+
+  // Update length bool if checkbox is clicked.
+  document.getElementById('lengthCritBool').addEventListener('click', event => lengthClicked = !lengthClicked)
+
   // Close modal on corner 'x' button click.
   document.getElementById('closeModalCorner').addEventListener('click', event => {
     event.preventDefault();
