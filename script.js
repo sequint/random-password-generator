@@ -16,7 +16,7 @@ document.getElementById('generate').addEventListener('click', event => {
                 <h5 class="modal-title">Select Password Criteria</h5>
                 <button type="button" class="btn-close" id="closeModalCorner"></button>
               </div>
-              <div class="modal-body">
+              <div class="modal-body" id="promptBody">
                 <ul>
                   <li> <input id="lengthCritBool" type="checkbox">
                     <p class="criteriaItem">Length</p>
@@ -25,11 +25,11 @@ document.getElementById('generate').addEventListener('click', event => {
                     <p class="criteriaItem">Special Characters</p>
                   </li>
                 </ul>
-                <p class="mustSelectMessage" id="mustSelectMessage"></p>
               </div>
+              <p class="mustSelectMessage" id="mustSelectMessage"></p>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" id="closeModalBottom">Close</button>
-                <button type="button" class="btn btn-primary nextBtn" id="nextBtn">Next</button>
+                <button type="button" class="btn btn-primary toGetLengthBtn" id="toGetLengthBtn">Next</button>
               </div>
             </div>
           </div>
@@ -67,7 +67,25 @@ document.getElementById('generate').addEventListener('click', event => {
 
 })
 
-                        //**********Next Button**********//
+                        //********** toGetLength Button **********//
+document.addEventListener('click', event => {
+  if (event.target.classList.contains('toGetLengthBtn')) {
+
+    document.getElementById('modal-body')    
+
+    if (lengthClicked) {
+      passwordLength()
+    }
+    else if (specialCharClicked) {
+      specialCharacters()
+    }
+    else {
+      document.getElementById('mustSelectMessage').textContent = 'Please select at least one criteria'
+    }
+  }
+})
+
+
 document.addEventListener('click', event => {
   if (event.target.classList.contains('nextBtn')) {
 
