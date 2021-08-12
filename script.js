@@ -7,7 +7,7 @@ document.getElementById('generateBtn').addEventListener('click', event => {
           <div class="modal-dialog" id="modalDialog">
             <div class="modal-content modalPosition">
               <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
+                <h5 class="modal-title">Select Password Criteria</h5>
                 <button type="button" class="btn-close" id="closeModalCorner"></button>
               </div>
               <div class="modal-body">
@@ -16,7 +16,7 @@ document.getElementById('generateBtn').addEventListener('click', event => {
                     <p class="criteriaItem">Length</p>
                   </li>
                   <li> <input id="charCritBool" type="checkbox">
-                    <p class="criteriaItem">Specia Characters</p>
+                    <p class="criteriaItem">Special Characters</p>
                   </li>
                 </ul>
               </div>
