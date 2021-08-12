@@ -1,11 +1,12 @@
-// Global generator variables
-let lengthClicked = false
-let specialCharClicked = false
 
 //*********************************Generate Password Button*********************************//
 
 document.getElementById('generateBtn').addEventListener('click', event => {
   event.preventDefault()
+
+  // Checkbox boolian variables
+  let lengthClicked = false
+  let specialCharClicked = false
 
   document.getElementById('generatorPrompts').innerHTML = `
         <div class="promptsModal" id="closeModalOuter">
