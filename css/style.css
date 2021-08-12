@@ -7,5 +7,15 @@
 .btnCustStyle {
   margin-bottom: 25px;
   background-color: rgb(167, 1, 1);
-  border:rgb(167, 1, 1) solid 1px;
+  border: rgb(167, 1, 1) solid 1px;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+
+.btnCustStyle:hover {
+  background-color: rgb(167, 1, 1);
+  border: rgb(167, 1, 1) solid 1px;
 }
