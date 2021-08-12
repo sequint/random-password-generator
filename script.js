@@ -29,7 +29,7 @@ document.getElementById('generate').addEventListener('click', event => {
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" id="closeModalBottom">Close</button>
-                <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+                <button type="button" class="btn btn-primary nextBtn" id="nextBtn">Next</button>
               </div>
             </div>
           </div>
@@ -65,9 +65,11 @@ document.getElementById('generate').addEventListener('click', event => {
   // Ignore event listener from parent element.
   document.getElementById('modalDialog').addEventListener('click', event => event.stopPropagation())
 
-                    //**********Next Button**********//
-  document.getElementById('nextBtn').addEventListener('click', event => {
-    event.preventDefault()
+})
+
+                        //**********Next Button**********//
+document.addEventListener('click', event => {
+  if (event.target.classList.contains('nextBtn')) {
 
     // Function that gets a desired password length from user between 8 and 128 characters.
     const passwordLength = () => {
@@ -95,7 +97,5 @@ document.getElementById('generate').addEventListener('click', event => {
     else {
       document.getElementById('mustSelectMessage').textContent = 'Please select at least one criteria'
     }
-
-  })
-
+  }
 })
