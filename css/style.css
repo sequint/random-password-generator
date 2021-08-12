@@ -1,3 +1,8 @@
+.pageContainer {
+  z-index: 100;
+  position: relative;
+}
+
 .genTitleCustStyle {
   border-bottom: rgb(220, 220, 220) solid 2px;
   padding-bottom: 20px;
@@ -39,4 +44,16 @@
 .btnCustStyle:hover {
   background-color: rgb(167, 1, 1);
   border: rgb(167, 1, 1) solid 1px;
+}
+
+.testDiv {
+  z-index: 900;
+  position: fixed;
+  height: 1000px;
+  width: 100%;
+  background-color:rgba(230, 230, 230, 0.2);
+}
+
+.generatorPrompts {
+  position: relative;
 }
