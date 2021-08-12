@@ -6,4 +6,6 @@
 
 .btnCustStyle {
   margin-bottom: 25px;
+  background-color: rgb(167, 1, 1);
+  border:rgb(167, 1, 1) solid 1px;
 }
