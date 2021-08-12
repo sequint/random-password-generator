@@ -11,26 +11,42 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  
-  <div class="container-fluid">
+  <div id="generatorPrompts"></div>
+  <div class="container-fluid pageContainer">
+    
     <section class="row pageTitle">
       <h1 class="col-12 text-center pt-2">Password Generator</h1>
     </section>
+
     <section class="row cardGenerator">
       <div class="card generatorCustStyle">
         <div class="card-body">
           <h5 class="card-title genTitleCustStyle">Generate a Password</h5>
           <p class="card-text text-center genTextCustStyle">With supporting text below as a natural lead-in to additional content.</p>
           <div class="btnContainer text-center">
-            <a href="#" class="btn btn-primary btnCustStyle">Generate Password</a>
+            <a href="#" class="btn btn-primary btnCustStyle" id="generateBtn">Generate Password</a>
           </div>
         </div>
       </div>
     </section>
+
   </div>
+  
+
+  
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-  <script src="./script.js"></script>
+  <script>
+
+    // Function that toggles pop up modal on button click.
+    document.getElementById('generateBtn').addEventListener('click', event => {
+      event.preventDefault()
+      document.getElementById('generatorPrompts').innerHTML = `
+        <div class="testDiv"></div>
+      `
+      })
+
+  </script>
 </body>
 </html>
