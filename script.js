@@ -24,6 +24,7 @@ document.getElementById('generateBtn').addEventListener('click', event => {
                     <p class="criteriaItem">Special Characters</p>
                   </li>
                 </ul>
+                <p class="mustSelectMessage" id="mustSelectMessage"></p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" id="closeModalBottom">Close</button>
@@ -78,10 +79,20 @@ document.getElementById('nextBtn').addEventListener('click', event => {
   }
 
   // Function that gets desired special characters to inlclude from user between.
-  const passwordLength = () => {
+  const specialCharacters = () => {
 
     console.log('In special character function.')
 
+  }
+
+  if (lengthClicked) {
+    passwordLength()
+  }
+  else if (specialCharClicked) {
+    specialCharacters()
+  }
+  else {
+    document.getElementById('mustSelectMessage').textContent = 'Please select at least one criteria'
   }
 
 })
