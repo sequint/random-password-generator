@@ -14,8 +14,11 @@
 }
 
 .btnCustStyle {
+  font-size: 20px;
   margin-top: 20px;
   margin-bottom: 25px;
+  padding-left: 30px;
+  padding-right: 30px;
   background-color: rgb(167, 1, 1);
   border: rgb(167, 1, 1) solid 1px;
   border-radius: 25px;
@@ -23,7 +26,7 @@
   -moz-border-radius: 25px;
   -ms-border-radius: 25px;
   -o-border-radius: 25px;
-  width: 200px;
+
 }
 
 .btnCustStyle:hover {
