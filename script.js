@@ -1,7 +1,7 @@
 
 //*********************************Generate Password Button*********************************//
 
-document.getElementById('generateBtn').addEventListener('click', event => {
+document.getElementById('generate').addEventListener('click', event => {
   event.preventDefault()
 
   // Checkbox boolian variables
