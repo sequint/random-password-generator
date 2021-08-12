@@ -10,6 +10,7 @@
 }
 
 .genTextCustStyle {
+  font-size: 20px;
   border: rgb(200, 200, 200) dashed 2px;
   border-radius: 5px;
   height: 130px;
