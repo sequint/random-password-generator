@@ -73,7 +73,15 @@ document.getElementById('nextBtn').addEventListener('click', event => {
   // Function that gets a desired password length from user between 8 and 128 characters.
   const passwordLength = () => {
 
-    document.getElementById('generatorPrompts')
+    console.log('In length function.')
 
   }
+
+  // Function that gets desired special characters to inlclude from user between.
+  const passwordLength = () => {
+
+    console.log('In special character function.')
+
+  }
+
 })
