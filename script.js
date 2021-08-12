@@ -12,8 +12,12 @@ document.getElementById('generateBtn').addEventListener('click', event => {
               </div>
               <div class="modal-body">
                 <ul>
-                  <li> <input class="criteriaItem" id="lengthCritBool" type="checkbox">Length</li>
-                  <li> <input class="criteriaItem" id="charCritBool" type="checkbox">Special Characters</li>
+                  <li> <input id="lengthCritBool" type="checkbox">
+                    <p class="criteriaItem">Length</p>
+                  </li>
+                  <li> <input id="charCritBool" type="checkbox">
+                    <p class="criteriaItem">Specia Characters</p>
+                  </li>
                 </ul>
               </div>
               <div class="modal-footer">
