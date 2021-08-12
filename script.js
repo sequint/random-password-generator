@@ -4,7 +4,7 @@ document.getElementById('generateBtn').addEventListener('click', event => {
 
   document.getElementById('generatorPrompts').innerHTML = `
         <div class="promptsModal" id="closeModalOuter">
-          <div class="modal-dialog">
+          <div class="modal-dialog" id="modalDialog">
             <div class="modal-content modalPosition">
               <div class="modal-header">
                 <h5 class="modal-title">Modal title</h5>
@@ -40,4 +40,7 @@ document.getElementById('generateBtn').addEventListener('click', event => {
 
     document.getElementById('generatorPrompts').innerHTML = ''
   })
+
+  // Ignore event listener from parent element.
+  document.getElementById('modalDialog').addEventListener('click', event => event.stopPropagation())
 })
