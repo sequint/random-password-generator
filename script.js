@@ -11,7 +11,10 @@ document.getElementById('generateBtn').addEventListener('click', event => {
                 <button type="button" class="btn-close" id="closeModalCorner"></button>
               </div>
               <div class="modal-body">
-                <p>Modal body text goes here.</p>
+                <ul class="passCriteriaList">
+                  <li id="lengthCritBool">Length</li>
+                  <li id="charCritBool">Special Characters</li>
+                </ul>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" id="closeModalBottom">Close</button>
