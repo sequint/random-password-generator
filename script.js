@@ -65,7 +65,7 @@ document.getElementById('generateBtn').addEventListener('click', event => {
   // Ignore event listener from parent element.
   document.getElementById('modalDialog').addEventListener('click', event => event.stopPropagation())
 
-  //**********Next Button**********//
+                    //**********Next Button**********//
   document.getElementById('nextBtn').addEventListener('click', event => {
     event.preventDefault()
 
@@ -73,6 +73,9 @@ document.getElementById('generateBtn').addEventListener('click', event => {
     const passwordLength = () => {
 
       console.log('In length function.')
+      if (specialCharClicked) {
+        specialCharacters()
+      }
 
     }
 
