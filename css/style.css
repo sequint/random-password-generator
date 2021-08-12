@@ -58,3 +58,8 @@
   display: inline;
   margin-left: 5px;
 }
+
+.mustSelectMessage {
+  margin: -10px 0px 0px 32px;
+  color: red;
+}
