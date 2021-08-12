@@ -1,4 +1,9 @@
-// Function that toggles pop up modal on button click.
+// Global generator variables
+let lengthClicked = false
+let specialCharClicked = false
+
+//*********************************Generate Password Button*********************************//
+
 document.getElementById('generateBtn').addEventListener('click', event => {
   event.preventDefault()
 
@@ -22,7 +27,7 @@ document.getElementById('generateBtn').addEventListener('click', event => {
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" id="closeModalBottom">Close</button>
-                <button type="button" class="btn btn-primary">Next</button>
+                <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
               </div>
             </div>
           </div>
@@ -50,4 +55,18 @@ document.getElementById('generateBtn').addEventListener('click', event => {
 
   // Ignore event listener from parent element.
   document.getElementById('modalDialog').addEventListener('click', event => event.stopPropagation())
+})
+
+
+//*********************************Next Button*********************************//
+
+document.getElementById('nextBtn').addEventListener('click', event => {
+  event.preventDefault()
+
+  // Function that gets a desired password length from user between 8 and 128 characters.
+  const passwordLength = () => {
+
+    document.getElementById('generatorPrompts')
+
+  }
 })
