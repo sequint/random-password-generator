@@ -13,6 +13,7 @@
   -moz-border-radius: 25px;
   -ms-border-radius: 25px;
   -o-border-radius: 25px;
+  width: 200px;
 }
 
 .btnCustStyle:hover {
