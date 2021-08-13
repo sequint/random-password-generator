@@ -13,28 +13,23 @@ document.getElementById('generate').addEventListener('click', event => {
           <div class="modal-dialog" id="modalDialog">
             <div class="modal-content modalPosition">
               <div class="modal-header">
-                <h5 class="modal-title">Select Password Criteria</h5>
+                <h5 class="modal-title">Enter password length (8-128)</h5>
                 <button type="button" class="btn-close" id="closeModalCorner"></button>
               </div>
               <div class="modal-body" id="promptBody">
-                <ul>
-                  <li> <input id="lengthCritBool" type="checkbox">
-                    <p class="criteriaItem">Length</p>
-                  </li>
-                  <li> <input id="charCritBool" type="checkbox">
-                    <p class="criteriaItem">Special Characters</p>
-                  </li>
-                </ul>
+                <form>
+                  <input type="number" class="passLength" id="passLength">
+                </form>
               </div>
               <p class="mustSelectMessage" id="mustSelectMessage"></p>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" id="closeModalBottom">Close</button>
-                <button type="button" class="btn btn-primary toGetLengthBtn" id="toGetLengthBtn">Next</button>
+                <button type="button" class="btn btn-primary nextBtn" id="nextBtn">Next</button>
               </div>
             </div>
           </div>
         </div>
-      `
+        `
 
   // Update length bool if checkbox is clicked.
   document.getElementById('lengthCritBool').addEventListener('click', event => lengthClicked = !lengthClicked)
@@ -67,53 +62,54 @@ document.getElementById('generate').addEventListener('click', event => {
 
 })
 
-                        //********** toGetLength Button **********//
-document.addEventListener('click', event => {
-  if (event.target.classList.contains('toGetLengthBtn')) {
-
-    document.getElementById('modal-body')    
-
-    if (lengthClicked) {
-      passwordLength()
-    }
-    else if (specialCharClicked) {
-      specialCharacters()
-    }
-    else {
-      document.getElementById('mustSelectMessage').textContent = 'Please select at least one criteria'
-    }
-  }
-})
-
+                        //********** Next Button **********//
 
 document.addEventListener('click', event => {
   if (event.target.classList.contains('nextBtn')) {
+    let passwordLength = document.getElementById('passLength').value
 
-    // Function that gets a desired password length from user between 8 and 128 characters.
-    const passwordLength = () => {
-
-      console.log('In length function.')
-      if (specialCharClicked) {
-        specialCharacters()
-      }
-
-    }
-
-    // Function that gets desired special characters to inlclude from user between.
-    const specialCharacters = () => {
-
-      console.log('In special character function.')
-
-    }
-
-    if (lengthClicked) {
-      passwordLength()
-    }
-    else if (specialCharClicked) {
-      specialCharacters()
+    if (passwordLength > 7 && passwordLength < 129) {
+      console.log('List Choice Display')
     }
     else {
-      document.getElementById('mustSelectMessage').textContent = 'Please select at least one criteria'
+      document.getElementById('mustSelectMessage').textContent = 'Please enter a name 8 - 128'
+      document.getElementById('passLength').textContent = ''
     }
+
+    // Select Password Criteria
+    // <li> <input id="lengthCritBool" type="checkbox">
+    //   <p class="criteriaItem">Length</p>
+    //               </li>
+    //   <li> <input id="charCritBool" type="checkbox">
+    //     <p class="criteriaItem">Special Characters</p>
+    //               </li>
+
+
+    // // Function that gets a desired password length from user between 8 and 128 characters.
+    // const passwordLength = () => {
+
+    //   console.log('In length function.')
+    //   if (specialCharClicked) {
+    //     specialCharacters()
+    //   }
+
+    // }
+
+    // // Function that gets desired special characters to inlclude from user between.
+    // const specialCharacters = () => {
+
+    //   console.log('In special character function.')
+
+    // }
+
+    // if (lengthClicked) {
+    //   passwordLength()
+    // }
+    // else if (specialCharClicked) {
+    //   specialCharacters()
+    // }
+    // else {
+    //   document.getElementById('mustSelectMessage').textContent = 'Please select at least one criteria'
+    // }
   }
 })
