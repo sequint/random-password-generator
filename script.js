@@ -1,109 +1,36 @@
+document.getElementById('generate').addEventListener('click', () => {
+  
+  // Constant data to pull password elements from.
+  const upperArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O','P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+  const lowerArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+  const numArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  const specCharArray = ['!', '@', '#', '$', '%', '^', '&', '*']
 
-//*********************************Generate Password Button*********************************//
+  // Prompt the user for the length of the array.
+  passLength = prompt('Enter password length (8-128)')
 
-document.getElementById('generate').addEventListener('click', event => {
-  event.preventDefault()
-
-  // Checkbox boolian variables
-  let lengthClicked = false
-  let specialCharClicked = false
-
-  document.getElementById('generatorPrompts').innerHTML = `
-        <div class="promptsModal" id="closeModalOuter">
-          <div class="modal-dialog" id="modalDialog">
-            <div class="modal-content modalPosition">
-              <div class="modal-header">
-                <h5 class="modal-title">Enter password length (8-128)</h5>
-                <button type="button" class="btn-close" id="closeModalCorner"></button>
-              </div>
-              <div class="modal-body" id="promptBody">
-                <form>
-                  <input type="number" class="passLength" id="passLength">
-                </form>
-              </div>
-              <p class="mustSelectMessage" id="mustSelectMessage"></p>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" id="closeModalBottom">Close</button>
-                <button type="button" class="btn btn-primary nextBtn" id="nextBtn">Next</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        `
-
-  // Close modal on corner 'x' button click.
-  document.getElementById('closeModalCorner').addEventListener('click', event => {
-    event.preventDefault();
-
-    document.getElementById('generatorPrompts').innerHTML = ''
-  })
-  // Close modal on lower close button click.
-  document.getElementById('closeModalBottom').addEventListener('click', event => {
-    event.preventDefault();
-
-    document.getElementById('generatorPrompts').innerHTML = ''
-
-  })
-  // Close modal on out of window click.
-  document.getElementById('closeModalOuter').addEventListener('click', event => {
-    event.preventDefault();
-
-    document.getElementById('generatorPrompts').innerHTML = ''
-  })
-
-  // Ignore event listener from parent element.
-  document.getElementById('modalDialog').addEventListener('click', event => event.stopPropagation())
-
-})
-
-                        //********** Next Button **********//
-
-document.addEventListener('click', event => {
-  if (event.target.classList.contains('nextBtn')) {
-    let passwordLength = document.getElementById('passLength').value
-
-    if (passwordLength > 7 && passwordLength < 129) {
-      console.log('List Choice Display')
+  // Create a control for password length.
+  while (passLength < 8 || passLength > 128) {
+    if (passLength < 8) {
+      passLength = prompt('Please enter a number greater then 7.')
     }
     else {
-      document.getElementById('mustSelectMessage').textContent = 'Please enter a name 8 - 128'
-      document.getElementById('passLength').textContent = ''
+      // Re-initialize so the user can exit if needed.
+      passLength = 8
+      passLength = prompt('Please enter a number less than 129.')
     }
-
-    // Select Password Criteria
-    // <li> <input id="lengthCritBool" type="checkbox">
-    //   <p class="criteriaItem">Length</p>
-    //               </li>
-    //   <li> <input id="charCritBool" type="checkbox">
-    //     <p class="criteriaItem">Special Characters</p>
-    //               </li>
-
-
-    // // Function that gets a desired password length from user between 8 and 128 characters.
-    // const passwordLength = () => {
-
-    //   console.log('In length function.')
-    //   if (specialCharClicked) {
-    //     specialCharacters()
-    //   }
-
-    // }
-
-    // // Function that gets desired special characters to inlclude from user between.
-    // const specialCharacters = () => {
-
-    //   console.log('In special character function.')
-
-    // }
-
-    // if (lengthClicked) {
-    //   passwordLength()
-    // }
-    // else if (specialCharClicked) {
-    //   specialCharacters()
-    // }
-    // else {
-    //   document.getElementById('mustSelectMessage').textContent = 'Please select at least one criteria'
-    // }
   }
+
+  // Prompt the user for criteria they like included in the password.
+  let upperCase = prompt('Would you like to include numbers in your password? (Enter Y for yes and N for no)')
+  let lowerCase = prompt('Would you like to include numbers in your password? (Enter Y for yes and N for no)')
+  let numbers = prompt('Would you like to include numbers in your password? (Enter Y for yes and N for no)')
+  let specialCharacters = prompt('Would you like to include numbers in your password? (Enter Y for yes and N for no)')
+
+  // // Create an empty array to store 
+  // let arraysIncluded = []
+  // if (upperCase) {
+    
+  // }
+
 })
