@@ -29,15 +29,15 @@ const checkYesOrNo = input => {
   }
 }
 
-const getCriteria = () => {
-  // Initiate empty criteria array to hold the names of the arrays to be included.
-  let criteria = []
-  let 
-  // Prompt the user for the criteria and store the array name if they want it included.
-  prompt('Would you like to include upper case letters in your password? (Enter Y for yes and N for no)') === 'Y' ? criteria.push()
-  prompt('Would you like to include numbers in your password? (Enter Y for yes and N for no)')
-  prompt('Would you like to include numbers in your password? (Enter Y for yes and N for no)')
-  prompt('Would you like to include numbers in your password? (Enter Y for yes and N for no)')
+const getUpperCriteria = () => {
+  // Array used to loop through and print a prompt to the user.
+  const messageNames = ['upper case letters', 'lower case letters', 'numbers', 'special characters']
+  const arNames = ['upperCase', 'lowerCase', 'numArray', 'specCharArray']
+
+  let criteria = messageNames.map((name, i) => {
+    return i
+  })
+
 }
 
 document.getElementById('generate').addEventListener('click', () => {
@@ -50,6 +50,7 @@ document.getElementById('generate').addEventListener('click', () => {
 
   // Prompt the user for the length of the array and store the answer.
   passLength = getPasswordLength()
+  getUpperCriteria()
   
 
   // // Create an empty array to store 
