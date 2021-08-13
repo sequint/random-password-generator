@@ -9,12 +9,21 @@ document.getElementById('generate').addEventListener('click', () => {
   // Prompt the user for the length of the array.
   let passLength = prompt('Enter password length (8-128)')
 
+  // Create a control for password length.
+  while (passLength < 8 || passLength > 128) {
+    passLength = prompt('Please enter a number between 8 and 128')
+  }
+
   // Prompt the user for criteria they like included in the password.
   let upperCase = prompt('Would you like uppercase characters? (Enter Y for yes and N for no)')
   let lowerCase = prompt('Would you like lowercase characters? (Enter Y for yes and N for no)')
   let numbers = prompt('Would you like uppercase characters? (Enter Y for yes and N for no)')
   let specialCharacters = prompt('Would you like uppercase characters? (Enter Y for yes and N for no)')
 
-  
+  // // Create an empty array to store 
+  // let arraysIncluded = []
+  // if (upperCase) {
+    
+  // }
 
 })
