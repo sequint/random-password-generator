@@ -18,7 +18,26 @@ const getPasswordLength = () => {
 
 const checkYesOrNo = input => {
   // Capitalize input.
+  input.toUpperCase()
+
   // If input is Y or N return true, else return false.
+  if (input === 'Y' || input === 'N') {
+    return true
+  }
+  else {
+    return false
+  }
+}
+
+const getCriteria = () => {
+  // Initiate empty criteria array to hold the names of the arrays to be included.
+  let criteria = []
+  let 
+  // Prompt the user for the criteria and store the array name if they want it included.
+  prompt('Would you like to include upper case letters in your password? (Enter Y for yes and N for no)') === 'Y' ? criteria.push()
+  prompt('Would you like to include numbers in your password? (Enter Y for yes and N for no)')
+  prompt('Would you like to include numbers in your password? (Enter Y for yes and N for no)')
+  prompt('Would you like to include numbers in your password? (Enter Y for yes and N for no)')
 }
 
 document.getElementById('generate').addEventListener('click', () => {
@@ -31,12 +50,7 @@ document.getElementById('generate').addEventListener('click', () => {
 
   // Prompt the user for the length of the array and store the answer.
   passLength = getPasswordLength()
-
-  // Prompt the user for criteria they like included in the password.
-  let upperCase = prompt('Would you like to include numbers in your password? (Enter Y for yes and N for no)')
-  let lowerCase = prompt('Would you like to include numbers in your password? (Enter Y for yes and N for no)')
-  let numbers = prompt('Would you like to include numbers in your password? (Enter Y for yes and N for no)')
-  let specialCharacters = prompt('Would you like to include numbers in your password? (Enter Y for yes and N for no)')
+  
 
   // // Create an empty array to store 
   // let arraysIncluded = []
