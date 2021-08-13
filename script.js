@@ -1,3 +1,26 @@
+
+// Get password length function.
+const getPasswordLength = () => {
+  // Ask the user for a length.
+  let length = prompt('Enter password length (8-128)')
+
+  // If the length is outside the number bounds, alert the user and re-run the function.
+  if (length < 8 || length > 128) {
+    alert('Please enter a value between 8 and 128')
+    getPasswordLength()
+  }
+  // If the number is within the bounds return the number.
+  else {
+    console.log(length)
+    return length
+  }
+}
+
+const checkYesOrNo = input => {
+  // Capitalize input.
+  // If input is Y or N return true, else return false.
+}
+
 document.getElementById('generate').addEventListener('click', () => {
   
   // Constant data to pull password elements from.
@@ -6,20 +29,8 @@ document.getElementById('generate').addEventListener('click', () => {
   const numArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
   const specCharArray = ['!', '@', '#', '$', '%', '^', '&', '*']
 
-  // Prompt the user for the length of the array.
-  passLength = prompt('Enter password length (8-128)')
-
-  // Create a control for password length.
-  while (passLength < 8 || passLength > 128) {
-    if (passLength < 8) {
-      passLength = prompt('Please enter a number greater then 7.')
-    }
-    else {
-      // Re-initialize so the user can exit if needed.
-      passLength = 8
-      passLength = prompt('Please enter a number less than 129.')
-    }
-  }
+  // Prompt the user for the length of the array and store the answer.
+  passLength = getPasswordLength()
 
   // Prompt the user for criteria they like included in the password.
   let upperCase = prompt('Would you like to include numbers in your password? (Enter Y for yes and N for no)')
