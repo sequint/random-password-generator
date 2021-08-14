@@ -86,7 +86,7 @@ const getPassword = (length, criteria) => {
   // Loop through the amount of times the user chose the length of the password to be.
   for (let count = 0; count < length; count++) {
     // Get a random array from the user criteria.
-    let whichArray = Math.floor(Math.random() * criteria.length)
+    let whichArray = criteria[Math.floor(Math.random() * criteria.length)]
     console.log(whichArray)
     // Get a random character from the random array.
     let randomPassChar = whichArray[Math.floor(Math.random() * whichArray.length)]
