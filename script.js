@@ -38,7 +38,7 @@ const getCriteria = () => {
 
   for (let index = 0; index < messageNames.length; index++) {
     // Create a temp variable to store the users answer for each iteration.
-    let answer = prompt(`Would you like to include ${name} in your password?`)
+    let answer = prompt(`Would you like to include ${messageNames[index]} in your password?`)
     answer = answer.toUpperCase()
 
     // If there is no valid response, through error message and deicriment the index.
@@ -48,7 +48,7 @@ const getCriteria = () => {
     }
     // If the user answer is yes to prompt, store arNames with equivalent index into criteria array.
     else if (answer === 'Y') {
-      return arNames.push(messageNames[index])
+      return criteria.push(arNames[index])
     }
   }
 
