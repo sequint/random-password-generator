@@ -1,18 +1,23 @@
 
 // Get password length function.
 const getPasswordLength = () => {
-  // Ask the user for a length.
-  let length = prompt('Enter password length (8-128)')
+  // Initialize length outside of the loop
+  let length = ''
+  // Initiaize loop counter.
+  let loopCounter = 0
 
-  // If the length is outside the number bounds, alert the user and re-run the function.
-  if (length < 8 || length > 128 || isNaN(length)) {
-    alert('Please enter only a number value between 8 and 128')
-    getPasswordLength()
-  }
-  // If the number is within the bounds return the number.
-  else {
-    return length
-  }
+  // Get a length from the user.
+  // While the length is outside the number bounds, alert the user and re-run the function.
+  do {
+    // If the loop is past it's first iteration, show error message.
+    if (loopCounter > 0) {
+      alert('Please enter a number for input that is between 8 and 128.')
+    }
+    length = prompt('Enter password length (8-128)')
+    loopCounter++
+  } while (length < 8 || length > 128 || isNaN(length))
+
+  return length
 }
 
 const checkYesOrNo = input => {
