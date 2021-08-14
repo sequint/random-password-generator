@@ -29,7 +29,7 @@ const checkYesOrNo = input => {
   }
 }
 
-const getUpperCriteria = () => {
+const getCriteria = () => {
   // Array used to loop through and print a prompt to the user.
   const messageNames = ['upper case letters', 'lower case letters', 'numbers', 'special characters']
   const arNames = ['upperCase', 'lowerCase', 'numArray', 'specCharArray']
@@ -65,7 +65,7 @@ document.getElementById('generate').addEventListener('click', () => {
   passLength = getPasswordLength()
   // Message to tell user what the valid responses will be for getting criteria.
   alert('Please enter a Y for yes and N for no for the following questions.')
-  getUpperCriteria()
+  getCriteria()
   
 
   // // Create an empty array to store 
