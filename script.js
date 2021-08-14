@@ -33,6 +33,8 @@ const getCriteria = () => {
   // Array used to loop through and print a prompt to the user.
   const messageNames = ['upper case letters', 'lower case letters', 'numbers', 'special characters']
   const arNames = ['upperCase', 'lowerCase', 'numArray', 'specCharArray']
+  // Create an empty array to store user responses.
+  let criteria = []
 
   let criteria = messageNames.map((name, i) => {
     // Create a temp variable to store the users answer for each iteration.
