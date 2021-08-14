@@ -72,6 +72,24 @@ const getCriteria = () => {
 
 }
 
+const getPassword = (length, criteria) => {
+  // Constant data to pull password elements from.
+  const upperArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+  const lowerArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+  const numArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  const specCharArray = ['!', '@', '#', '$', '%', '^', '&', '*']
+
+  // Create an empty string variable for the password.
+  let password = ''
+
+  // Loop through the amount of times the user chose the length of the password to be.
+  for (let count = 0; count < length; count++) {
+    
+  }
+
+}
+
+
 document.getElementById('generate').addEventListener('click', () => {
   
   // Constant data to pull password elements from.
@@ -82,15 +100,13 @@ document.getElementById('generate').addEventListener('click', () => {
 
   // Prompt the user for the length of the array and store the answer.
   passLength = getPasswordLength()
+
   // Message to tell user what the valid responses will be for getting criteria.
   alert('Please enter a Y for yes and N for no for the following questions.')
-  console.log(getCriteria())
   
+  // Get which critera the user would like to have stored into the password.
+  let criteriaArray = getCriteria()
 
-  // // Create an empty array to store 
-  // let arraysIncluded = []
-  // if (upperCase) {
-    
-  // }
+  let password = getPassword()
 
 })
