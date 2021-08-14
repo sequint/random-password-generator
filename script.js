@@ -35,28 +35,37 @@ const getCriteria = () => {
   const arNames = ['upperCase', 'lowerCase', 'numArray', 'specCharArray']
   // Create an empty array to store user responses.
   let criteria = []
+  
+  // Set a counting iterator for the loop.
+  let loopIterator = 0
 
-  for (let index = 0; index < messageNames.length; index++) {
-    // Create a temp variable to store the users answer for each iteration.
-    let answer = prompt(`Would you like to include ${messageNames[index]} in your password?`)
-    answer = answer.toUpperCase()
+  do {
 
-    // If there is no valid response, through error message and deicriment the index.
-    if (answer !== 'Y' && answer !== 'N') {
-      alert('Please enter a Y or N response.')
-      index--
+    // If the loop is running again, throw the error message.
+    if (loopIterator > 0) {
+      alert('You must answer yes to at least one criteria.')
     }
-    // If the user answer is yes to prompt, store arNames with equivalent index into criteria array.
-    else if (answer === 'Y') {
-      criteria.push(arNames[index])
-    }
-  }
 
-  // If the array is empty, tell the user the must answer Y to at least one, then do the same function again.
-  if (criteria.length === 0) {
-    alert('You must answer yes to at least one criteria.')
-    getCriteria()
-  }
+    for (let index = 0; index < messageNames.length; index++) {
+      // Create a temp variable to store the users answer for each iteration.
+      let answer = prompt(`Would you like to include ${messageNames[index]} in your password?`)
+      answer = answer.toUpperCase()
+
+      // If there is no valid response, through error message and deicriment the index.
+      if (answer !== 'Y' && answer !== 'N') {
+        alert('Please enter a Y or N response.')
+        index--
+      }
+      // If the user answer is yes to prompt, store arNames with equivalent index into criteria array.
+      else if (answer === 'Y') {
+        criteria.push(arNames[index])
+      }
+    }
+
+    // Iterate loop count.
+    loopIterator++
+
+  } while (criteria.length === 0)
 
   // Return the new array with user criteria choices.
   return criteria
