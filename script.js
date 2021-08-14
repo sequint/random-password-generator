@@ -51,6 +51,12 @@ const getCriteria = () => {
       return arNames.push(messageNames[index])
     }
 
+    // If the array is empty, tell the user the must answer Y to at least one, then do the same function again.
+    if (criteria.isEmpty()) {
+      alert('You must answer yes to at least one criteria.')
+      getCriteria()
+    }
+
     // Return the new array with user criteria choices.
   }
 
