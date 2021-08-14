@@ -35,7 +35,14 @@ const getUpperCriteria = () => {
   const arNames = ['upperCase', 'lowerCase', 'numArray', 'specCharArray']
 
   let criteria = messageNames.map((name, i) => {
-    return i
+    // Create a temp variable to store the users answer for each iteration.
+    let answer = prompt(`Would you like to include ${name} in your password?`)
+
+    // If the user answer is yes to prompt, store arNames with equivalent index into criteria array.
+    if ( === 'Y') {
+      return arNames[i]
+    }
+    else
   })
 
 }
