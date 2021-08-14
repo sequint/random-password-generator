@@ -58,6 +58,7 @@ const getCriteria = () => {
     }
 
     // Return the new array with user criteria choices.
+    return criteria
   }
 
   let criteria = messageNames.map((name, i) => {
