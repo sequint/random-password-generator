@@ -11,7 +11,6 @@ const getPasswordLength = () => {
   }
   // If the number is within the bounds return the number.
   else {
-    console.log(length)
     return length
   }
 }
@@ -73,7 +72,6 @@ const getCriteria = () => {
 }
 
 const getPassword = (length, criteria) => {
-  console.log('In getPassword')
   // Constant data to pull password elements from.
   const upperArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
   const lowerArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
@@ -93,7 +91,6 @@ const getPassword = (length, criteria) => {
     for (let count = 0; count < length; count++) {
       // Get a random array from the user criteria.
       let whichArray = criteria[Math.floor(Math.random() * criteria.length)]
-      console.log(whichArray)
 
       if (whichArray === 'upperCase') {
         password += upperArray[Math.floor(Math.random() * upperArray.length)]
@@ -131,7 +128,6 @@ const getPassword = (length, criteria) => {
 
 }
 
-
 document.getElementById('generate').addEventListener('click', () => {
   // Prompt the user for the length of the array and store the answer.
   passLength = getPasswordLength()
@@ -143,7 +139,6 @@ document.getElementById('generate').addEventListener('click', () => {
   let criteriaArray = getCriteria()
 
   let password = getPassword(passLength, criteriaArray)
-  console.log(password)
 
   document.getElementById('password').textContent = password
 })
