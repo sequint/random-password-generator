@@ -80,8 +80,13 @@ const getPassword = (length, criteria) => {
   const numArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
   const specCharArray = ['!', '@', '#', '$', '%', '^', '&', '*']
 
-  // Create an empty string variable for the password.
-  let password = ''
+  
+  let password = ''       // Variable for the password.
+  let allCriteriaHit = 0  // Counter to ensure all criteria is used
+  let hitUpper = 0
+  let hitLower = 0
+  let hitNum = 0
+  let hitChar = 0
 
   // Loop through the amount of times the user chose the length of the password to be.
   for (let count = 0; count < length; count++) {
@@ -91,15 +96,31 @@ const getPassword = (length, criteria) => {
 
     if (whichArray === 'upperCase') {
       password += upperArray[Math.floor(Math.random() * upperArray.length)]
+      if (hitUpper === 0) {
+        hitUpper = 1
+        allCriteriaHit++
+      }
     }
     else if (whichArray === 'lowerCase') {
       password += lowerArray[Math.floor(Math.random() * upperArray.length)]
+      if (hitLower === 0) {
+        hitLower = 1
+        allCriteriaHit++
+      }
     }
     else if (whichArray === 'numArray') {
       password += numArray[Math.floor(Math.random() * numArray.length)]
+      if (hitNum === 0) {
+        hitNum = 1
+        allCriteriaHit++
+      }
     }
     else if (whichArray === 'specCharArray') {
       password += specCharArray[Math.floor(Math.random() * specCharArray.length)]
+      if (hitChar === 0) {
+        hitChar = 1
+        allCriteriaHit++
+      }
     }
 
   }
