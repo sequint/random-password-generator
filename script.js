@@ -81,29 +81,35 @@ const getPassword = (length, criteria) => {
   const specCharArray = ['!', '@', '#', '$', '%', '^', '&', '*']
 
   // Create an empty string variable for the password.
-  let password = ''
+  let password = []
 
   // Loop through the amount of times the user chose the length of the password to be.
   for (let count = 0; count < length; count++) {
     // Get a random array from the user criteria.
     let whichArray = criteria[Math.floor(Math.random() * criteria.length)]
     console.log(whichArray)
-    // Get a random character from the random array.
-    let randomPassChar = whichArray[Math.floor(Math.random() * whichArray.length)]
-    console.log(randomPassChar)
+
+    if (whichArray === 'upperCase') {
+      password.push(upperArray[Math.floor(Math.random() * upperArray.length)])
+    }
+    else if (whichArray === 'lowerCase') {
+      password.push(lowerArray[Math.floor(Math.random() * upperArray.length)])
+    }
+    else if (whichArray === 'numArray') {
+      password.push(numArray[Math.floor(Math.random() * numArray.length)])
+    }
+    else if (whichArray === 'specCharArray') {
+      password.push(specCharArray[Math.floor(Math.random() * specCharArray.length)])
+    }
+
   }
+
+  return password
 
 }
 
 
 document.getElementById('generate').addEventListener('click', () => {
-  
-  // // Constant data to pull password elements from.
-  // const upperArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O','P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-  // const lowerArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-  // const numArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-  // const specCharArray = ['!', '@', '#', '$', '%', '^', '&', '*']
-
   // Prompt the user for the length of the array and store the answer.
   passLength = getPasswordLength()
 
@@ -114,5 +120,7 @@ document.getElementById('generate').addEventListener('click', () => {
   let criteriaArray = getCriteria()
 
   let password = getPassword(passLength, criteriaArray)
+  password = JSON.stringify(password)
 
+  console.log(password)
 })
