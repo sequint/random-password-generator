@@ -88,42 +88,44 @@ const getPassword = (length, criteria) => {
   let hitNum = 0
   let hitChar = 0
 
-  // Loop through the amount of times the user chose the length of the password to be.
-  for (let count = 0; count < length; count++) {
-    // Get a random array from the user criteria.
-    let whichArray = criteria[Math.floor(Math.random() * criteria.length)]
-    console.log(whichArray)
+  do {
+    // Loop through the amount of times the user chose the length of the password to be.
+    for (let count = 0; count < length; count++) {
+      // Get a random array from the user criteria.
+      let whichArray = criteria[Math.floor(Math.random() * criteria.length)]
+      console.log(whichArray)
 
-    if (whichArray === 'upperCase') {
-      password += upperArray[Math.floor(Math.random() * upperArray.length)]
-      if (hitUpper === 0) {
-        hitUpper = 1
-        allCriteriaHit++
+      if (whichArray === 'upperCase') {
+        password += upperArray[Math.floor(Math.random() * upperArray.length)]
+        if (hitUpper === 0) {
+          hitUpper = 1
+          allCriteriaHit++
+        }
       }
-    }
-    else if (whichArray === 'lowerCase') {
-      password += lowerArray[Math.floor(Math.random() * upperArray.length)]
-      if (hitLower === 0) {
-        hitLower = 1
-        allCriteriaHit++
+      else if (whichArray === 'lowerCase') {
+        password += lowerArray[Math.floor(Math.random() * upperArray.length)]
+        if (hitLower === 0) {
+          hitLower = 1
+          allCriteriaHit++
+        }
       }
-    }
-    else if (whichArray === 'numArray') {
-      password += numArray[Math.floor(Math.random() * numArray.length)]
-      if (hitNum === 0) {
-        hitNum = 1
-        allCriteriaHit++
+      else if (whichArray === 'numArray') {
+        password += numArray[Math.floor(Math.random() * numArray.length)]
+        if (hitNum === 0) {
+          hitNum = 1
+          allCriteriaHit++
+        }
       }
-    }
-    else if (whichArray === 'specCharArray') {
-      password += specCharArray[Math.floor(Math.random() * specCharArray.length)]
-      if (hitChar === 0) {
-        hitChar = 1
-        allCriteriaHit++
+      else if (whichArray === 'specCharArray') {
+        password += specCharArray[Math.floor(Math.random() * specCharArray.length)]
+        if (hitChar === 0) {
+          hitChar = 1
+          allCriteriaHit++
+        }
       }
-    }
 
-  }
+    }
+  } while (allCriteriaHit < criteria.length)
 
   return password
 
