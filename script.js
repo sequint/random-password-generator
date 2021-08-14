@@ -5,8 +5,8 @@ const getPasswordLength = () => {
   let length = prompt('Enter password length (8-128)')
 
   // If the length is outside the number bounds, alert the user and re-run the function.
-  if (length < 8 || length > 128) {
-    alert('Please enter a value between 8 and 128')
+  if (length < 8 || length > 128 || isNaN(length)) {
+    alert('Please enter only a number value between 8 and 128')
     getPasswordLength()
   }
   // If the number is within the bounds return the number.
