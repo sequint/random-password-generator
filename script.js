@@ -53,7 +53,7 @@ const getCriteria = () => {
   }
 
   // If the array is empty, tell the user the must answer Y to at least one, then do the same function again.
-  if (criteria === []) {
+  if (criteria.length === 0) {
     alert('You must answer yes to at least one criteria.')
     getCriteria()
   }
