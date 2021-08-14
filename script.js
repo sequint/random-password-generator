@@ -81,7 +81,7 @@ const getPassword = (length, criteria) => {
   const specCharArray = ['!', '@', '#', '$', '%', '^', '&', '*']
 
   // Create an empty string variable for the password.
-  let password = []
+  let password = ''
 
   // Loop through the amount of times the user chose the length of the password to be.
   for (let count = 0; count < length; count++) {
@@ -90,16 +90,16 @@ const getPassword = (length, criteria) => {
     console.log(whichArray)
 
     if (whichArray === 'upperCase') {
-      password.push(upperArray[Math.floor(Math.random() * upperArray.length)])
+      password += upperArray[Math.floor(Math.random() * upperArray.length)]
     }
     else if (whichArray === 'lowerCase') {
-      password.push(lowerArray[Math.floor(Math.random() * upperArray.length)])
+      password += lowerArray[Math.floor(Math.random() * upperArray.length)]
     }
     else if (whichArray === 'numArray') {
-      password.push(numArray[Math.floor(Math.random() * numArray.length)])
+      password += numArray[Math.floor(Math.random() * numArray.length)]
     }
     else if (whichArray === 'specCharArray') {
-      password.push(specCharArray[Math.floor(Math.random() * specCharArray.length)])
+      password += specCharArray[Math.floor(Math.random() * specCharArray.length)]
     }
 
   }
@@ -120,7 +120,7 @@ document.getElementById('generate').addEventListener('click', () => {
   let criteriaArray = getCriteria()
 
   let password = getPassword(passLength, criteriaArray)
-  password = JSON.stringify(password)
-
   console.log(password)
+
+  document.getElementById('password').textContent = password
 })
