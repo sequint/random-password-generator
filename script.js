@@ -48,7 +48,7 @@ const getCriteria = () => {
     }
     // If the user answer is yes to prompt, store arNames with equivalent index into criteria array.
     else if (answer === 'Y') {
-      return criteria.push(arNames[index])
+      criteria.push(arNames[index])
     }
   }
 
@@ -75,7 +75,7 @@ document.getElementById('generate').addEventListener('click', () => {
   passLength = getPasswordLength()
   // Message to tell user what the valid responses will be for getting criteria.
   alert('Please enter a Y for yes and N for no for the following questions.')
-  getCriteria()
+  console.log(getCriteria())
   
 
   // // Create an empty array to store 
