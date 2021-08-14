@@ -48,7 +48,7 @@ const getUpperCriteria = () => {
     else if (answer === 'Y') {
       return arNames[i]
     }
-    
+
   })
 
 }
@@ -63,6 +63,8 @@ document.getElementById('generate').addEventListener('click', () => {
 
   // Prompt the user for the length of the array and store the answer.
   passLength = getPasswordLength()
+  // Message to tell user what the valid responses will be for getting criteria.
+  alert('Please enter a Y for yes and N for no for the following questions.')
   getUpperCriteria()
   
 
