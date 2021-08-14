@@ -73,6 +73,7 @@ const getCriteria = () => {
 }
 
 const getPassword = (length, criteria) => {
+  console.log('In getPassword')
   // Constant data to pull password elements from.
   const upperArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
   const lowerArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
@@ -84,6 +85,8 @@ const getPassword = (length, criteria) => {
 
   // Loop through the amount of times the user chose the length of the password to be.
   for (let count = 0; count < length; count++) {
+    // Get a random array from the user criteria.
+    let whichArray = criteria[Math.floor(Math.random() * criteria.length)]
     
   }
 
@@ -92,11 +95,11 @@ const getPassword = (length, criteria) => {
 
 document.getElementById('generate').addEventListener('click', () => {
   
-  // Constant data to pull password elements from.
-  const upperArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O','P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-  const lowerArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-  const numArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-  const specCharArray = ['!', '@', '#', '$', '%', '^', '&', '*']
+  // // Constant data to pull password elements from.
+  // const upperArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O','P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+  // const lowerArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+  // const numArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  // const specCharArray = ['!', '@', '#', '$', '%', '^', '&', '*']
 
   // Prompt the user for the length of the array and store the answer.
   passLength = getPasswordLength()
@@ -107,6 +110,6 @@ document.getElementById('generate').addEventListener('click', () => {
   // Get which critera the user would like to have stored into the password.
   let criteriaArray = getCriteria()
 
-  let password = getPassword()
+  let password = getPassword(passLength, criteriaArray)
 
 })
